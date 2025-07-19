@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперт по мелким домашним животным | Институт ДПО ВГАУ</title>
+    <meta name="description" content="Проверьте свои знания в области ветеринарии мелких домашних животных. Пульмонология, СЛР, стоматология и пластическая хирургия.">
+    <meta name="keywords" content="ветеринария, мелкие домашние животные, курсы для ветеринаров, повышение квалификации, пульмонология, СЛР, стоматология, пластическая хирургия, ВГАУ">
+    <meta name="author" content="Институт ДПО ВГАУ">
+    <meta property="og:title" content="Эксперт по мелким домашним животным">
+    <meta property="og:description" content="Проверьте свои знания в ветеринарии и получите приглашение на курсы повышения квалификации">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dpo.v-gau.ru/small-pets-quiz">
+    <link rel="shortcut icon" href="https://static.tildacdn.com/tild6163-6637-4330-a661-633362306233/favicon.ico" type="image/x-icon"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <img src="images/logo.png" alt="Логотип Института ДПО ВГАУ" class="logo">
+            <div class="user-info">
+                <img id="user-photo" src="images/icons/vet.png" alt="Ветеринар">
+                <span id="user-name"></span>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="screen" id="start-screen">
+                <h1>Эксперт по мелким домашним животным</h1>
+                <p>Проверьте свои знания в пульмонологии, СЛР, стоматологии и пластической хирургии</p>
+                <button id="start-btn" class="btn">Начать тестирование</button>
+                <button id="rules-btn" class="btn secondary">Правила</button>
+                <div class="course-promo">
+                    <p>* * *</p>
+	<a href="https://vgau.edu37.ru/calendar/" class="footer-link" target="_blank" rel="noopener noreferrer">
+                Здесь много интересных мероприятий для повышения своей квалификации</a>
+	<p>* * *</p>
+                </div>
+            </div>
+
+            <div class="screen" id="quiz-screen" style="display: none;">
+                <div class="progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span id="progress-text">1/20</span>
+                </div>
+                <div class="question-container">
+                    <h2 id="question-text">Загрузка вопроса...</h2>
+                </div>
+                <div class="options">
+                    <button class="btn option-btn" id="true-btn">Верно</button>
+                    <button class="btn option-btn" id="false-btn">Неверно</button>
+                </div>
+                <div class="timer-container">
+                    <div class="timer" id="timer">15</div>
+                </div>
+            </div>
+
+            <div class="screen" id="result-screen" style="display: none;">
+                <h2 id="result-title">Результат</h2>
+                <div id="result-explanation"></div>
+                <div class="course-promo-small" id="course-promo-result" style="display: none;">
+                    <p>Хотите углубить знания? Запишитесь на наш курс!</p>
+                </div>
+                <button id="next-btn" class="btn">Следующий вопрос</button>
+            </div>
+
+            <div class="screen" id="final-screen" style="display: none;">
+                <h2>Тестирование завершено!</h2>
+                <div class="score-container">
+                    <p>Ваш результат: <span id="final-score">0</span>/20</p>
+                    <p id="score-message"></p>
+                </div>
+                <div class="achievements" id="achievements"></div>
+                <div class="course-promo-final">
+                    <h3>Курсы повышения квалификации</h3>
+                    <p>По результатам теста мы рекомендуем вам следующие курсы:</p>
+                    <div id="recommended-courses"></div>
+                    <a href="https://dpo.v-gau.ru/programs" class="btn" target="_blank">Записаться на курсы</a>
+                </div>
+                <button id="restart-btn" class="btn secondary">Пройти тест снова</button>
+            </div>
+
+            <div class="screen" id="rules-screen" style="display: none;">
+                <h2>Правила тестирования</h2>
+                <ol class="rules-list">
+                    <li>Вам будет представлено 20 утверждений по ветеринарии мелких домашних животных</li>
+                    <li>Определите, верно ли каждое утверждение</li>
+                    <li>На каждый вопрос дается 15 секунд</li>
+                    <li>За правильный ответ вы получаете 1 балл</li>
+                    <li>После ответа вы увидите развернутое объяснение</li>
+                    <li>По результатам теста вы получите рекомендации по курсам повышения квалификации</li>
+                </ol>
+                <button id="back-btn" class="btn">Назад</button>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <div class="footer-social">
+                        <a href="https://t.me/vgaudpo" target="_blank" rel="noopener noreferrer">
+                            <img src="https://static.tildacdn.com/tild3532-3534-4430-b662-346535353530/Telegram.svg" alt="Telegram" class="social-icon">
+                        </a>
+                        <a href="https://dpo.v-gau.ru/programs" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Все программы обучения
+                        </a>
+                    </div>
+                </div>       
+                <div class="footer-center">
+                    <div class="footer-social">
+                        <a href="https://vk.com/dpovgau" target="_blank" rel="noopener noreferrer">
+                            <img src="https://v-gau.ru/upload/medialibrary/d07/r8b5w1cgrf8fjmn53iy10pdif88cadai.png" alt="VKontakte" class="social-icon">
+                        </a>
+                        <a href="https://dpo.v-gau.ru/contacts" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Контакты
+                        </a>
+                    </div>
+                </div>
+            </div>		
+            <p>* * *</p>
+			<p>© Институт ДПО ВГАУ, 2025 | Для профессионального развития ветеринаров</p>
+        </footer>
+    </div>
+
+    <script src="js/questions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
